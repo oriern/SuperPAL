@@ -96,11 +96,6 @@ def extract_textPlanning(alignments, scu2clusterIdx):
 
 
 
-dev_path = r'clean_final_results\finalAlignmentDataset_dev_cleaned_wo_duplications.csv'
-test_path = r'clean_final_results\finalAlignmentDataset_test_cleaned_wo_duplications.csv'
-train_path = r'C:\Users\user\Documents\Phd\autoAlignment\SCUdataGenerator\train_full_details_with_oies_oldLabels.csv'
-cnn_path = r'C:\Users\user\Documents\Phd\autoAlignment\alignedDatasets\devCNN_trainAll_checkpoint-2000.csv'
-mn_path = r'C:\Users\user\Documents\Phd\autoAlignment\alignedDatasets\devMultiNews_trainAll_checkpoint-2000.csv'
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-alignments_path', type=str, required=True)
