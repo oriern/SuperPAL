@@ -26,6 +26,7 @@ To apply aligment model on your own data, follow the following steps:
   python main_predict.py -data_path <DATA_PATH>  -output_path <OUT_DIR_PATH>  -alignment_model_path  <ALIGNMENT_MODEL_PATH>
   ```
   `<DATA_PATH>` should contain the following structure where a summary and its related document directory share the same name:
+      
       - <DATA_PATH>
         - summaries
           - A.txt
