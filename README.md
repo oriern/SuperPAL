@@ -14,6 +14,9 @@ To generate derived datasets (salience, clustering and generation) out of an ali
   python createSubDatasets.py -alignments_path <ALIGNMENTS_PATH>  -out_dir_path <OUT_DIR_PATH>
 ```
 
+`transformers` directory was forked from [huggingface](https://github.com/huggingface/transformers) v2.5.1, and edited for our purpose.
+`supervised_oie_wrapper` directory is a wrapper over AllenNLP's pretrained Open IE model that was implemented by Gabriel Stanovsky. It was forked from [here](https://github.com/gabrielStanovsky/supervised_oie_wrapper), and edited for our purpose.
+
 ## Alignment model ##
 To apply aligment model on your own data, follow the following steps:
   1. download the trained model [here](https://drive.google.com/drive/folders/1kTaZQVxUm-RWbF71QpOue5xDuV7-IP2i?usp=sharing) and put it under       `/transformers/examples/out/outnewMRPC_OIU/SpansOieNegativeAll_pan_full089_fixed/checkpoint-2000/`
@@ -23,7 +26,7 @@ To apply aligment model on your own data, follow the following steps:
   python main_predict.py -data_path <DATA_PATH>  -output_path <OUT_DIR_PATH>  -alignment_model_path  <ALIGNMENT_MODEL_PATH>
   ```
   `<DATA_PATH>` should contain the following structure where a summary and its related document directory share the same name:
-     
+      - <DATA_PATH>
         - summaries
           - A.txt
           - B.txt
