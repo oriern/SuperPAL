@@ -15,6 +15,7 @@ To generate derived datasets (salience, clustering and generation) out of an ali
 ```
 
 `transformers` directory was forked from [huggingface](https://github.com/huggingface/transformers) v2.5.1, and edited for our purpose.
+
 `supervised_oie_wrapper` directory is a wrapper over AllenNLP's pretrained Open IE model that was implemented by Gabriel Stanovsky. It was forked from [here](https://github.com/gabrielStanovsky/supervised_oie_wrapper), and edited for our purpose.
 
 ## Alignment model ##
