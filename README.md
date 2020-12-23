@@ -4,6 +4,9 @@ Data, Code and Model for the paper "[SuperPAL: Supervised Proposition ALignment 
 
 You can try [SuperPAL aligner demo](https://nlp.biu.ac.il/~ernstor1/SuperPAL_IU/) for a sense.
 
+
+## Data generation ##
+
 Predicted alignments of MultiNews and CNN/DailyMail train and val datasets can be found [here](https://drive.google.com/drive/folders/1JnRrdbENzBLpbae5ZIKmil1fuZhm2toc?usp=sharing).
 
 To generate derived datasets (salience, clustering and generation) out of an alignment file use:
@@ -19,6 +22,21 @@ To apply aligment model on your own data, follow the following steps:
 ```
   python main_predict.py -data_path <DATA_PATH>  -output_path <OUT_DIR_PATH>  -alignment_model_path  <ALIGNMENT_MODEL_PATH>
 ```
-It will create two files in `<OUT_DIR_PATH>`:
-  - 'dev.tsv' - contains all alignment candidate pairs.
-  - a '.csv' file - contains all predicted aligned pairs with their classification score.
+  `<DATA_PATH>` should contain the following structure where a summary and its related document directory share the same name:
+      - `<DATA_PATH>`
+        - summaries
+          - A.txt
+          - B.txt
+          - ...
+        - A
+          - doc_A1
+          - doc_A2
+          - ...
+        - B
+          - doc_B1
+          - doc_B2
+          - ...
+         
+  3. It will create two files in `<OUT_DIR_PATH>`:
+    - 'dev.tsv' - contains all alignment candidate pairs.
+    - a '.csv' file - contains all predicted aligned pairs with their classification score.
