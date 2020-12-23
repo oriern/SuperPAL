@@ -3,27 +3,20 @@ import os
 import sys
 import numpy as np
 import pickle
-# insert at 1, 0 is the script path (or '' in REPL)
-sys.path.insert(1, '/home/nlp/ernstor1/alignmentEval/')
-from annotation_checker_pkg.annotation_checker_task3 import Comparator
+
 
 def calc_final_alignments(csv_path, model_path, preds, preds_prob):
-    OUT_PATH = '/home/nlp/ernstor1/alignmentEval/annotation_checker_pkg/Task3_Datasets/'
 
     df = pd.read_csv(os.path.join(csv_path,'dev.tsv'), sep='\t')
-    positiveAlignments = df#[preds==1]
+    positiveAlignments = df[preds==1]
     positiveAlignments = positiveAlignments[['database', 'topic','summaryFile', 'scuSentCharIdx', 'scuSentence',
                                              'documentFile',	'docSentCharIdx', 'docSentText', 'docSpanOffsets',
                                              'summarySpanOffsets', 'docSpanText', 'summarySpanText','Quality']]
-    positiveAlignments['pred_prob'] = preds_prob#[preds==1]
-    pred_file_name = csv_path[:-1].split('/')[-1] + '_' + model_path[:-1].split('/')[-1] + '_negative' + '.csv'
-    pred_out_path = os.path.join(OUT_PATH, pred_file_name)
+    positiveAlignments['pred_prob'] = preds_prob[preds==1]
+    pred_file_name = csv_path[:-1].split('/')[-1] + '_' + model_path[:-1].split('/')[-1] + '.csv'
+    pred_out_path = os.path.join(csv_path, pred_file_name)
     positiveAlignments.to_csv(pred_out_path, index=False)
 
-    gold_path = "/home/nlp/ernstor1/alignmentEval/annotation_checker_pkg/Task3_Datasets/finalAlignmentDataset_dev_cleaned_wo_duplications.csv"
-
-
-    Comparator().compare_with_hard(gold_path, pred_out_path, hard_threshold=0.25, ignore_missing_from_gold=False)
 
 
 
