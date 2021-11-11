@@ -1,12 +1,30 @@
 # SuperPAL
 
-Data, Code and Model for the paper "[SuperPAL: Supervised Proposition ALignment for Multi-Document Summarization and Derivative Sub-Tasks](https://arxiv.org/abs/2009.00590)".
+Data, Code and Model for the paper "[Summary-Source Proposition-level Alignment: Task, Datasets and Supervised Baseline](https://aclanthology.org/2021.conll-1.25.pdf)".
 
-You can try [SuperPAL aligner demo](https://nlp.biu.ac.il/~ernstor1/SuperPAL_IU/) for a sense.
+You can use our huggingface model or check our demo [here](https://huggingface.co/biu-nlp/superpal).
+
 
 `transformers` directory was forked from [huggingface](https://github.com/huggingface/transformers) v2.5.1, and edited for our purpose.
 
 `supervised_oie_wrapper` directory is a wrapper over AllenNLP's pretrained Open IE model that was implemented by Gabriel Stanovsky. It was forked from [here](https://github.com/gabrielStanovsky/supervised_oie_wrapper), and edited for our purpose.
+
+## Manual Datasets ##
+
+All manual datasets are under `manual_datasets` repository, including crowdsourced dev and test sets, and Pyramid-based train set.
+
+As DUC-based datasets are limited to LDC agreement, we provide here only the character index of all propositions or sentences.
+
+So, if you have the original dataset, you can regenerate the alignments easily.
+
+If you have any issue regarding the DUC alignment regeneration, please contact via email.
+
+In addition, we are trying to upload our alignment datasets to LDC, so it will not have agreement issues. Will be updated soon.
+
+
+MultiNews alignments are released in full.
+
+
 
 ## Data generation ##
 
