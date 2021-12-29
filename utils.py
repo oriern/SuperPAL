@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/nlp/ernstor1/rouge/SummEval_referenceSubsets/code_score_extraction/')
+#sys.path.append('/home/nlp/ernstor1/rouge/SummEval_referenceSubsets/code_score_extraction/')
 
 from allennlp.predictors.predictor import Predictor
 import csv
