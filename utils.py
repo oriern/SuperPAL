@@ -203,7 +203,15 @@ def generate_scu_oie(sentence, max_scus=5, doc_summ='summ'):
     return scu_list[:max_scus]
 
 def generate_scu_oie_multiSent(sentences, doc_summ='summ'):
-    """ Given a scu sentence retrieve SCUs"""
+    """ Given a scu sentence retrieve SCUs (OIEs)
+    
+    The input should be a list of dictionaries with the following fields:
+        'scuSentence' #sentence text
+        'scuSentCharIdx' # character offset of the beginning of the sentence w.r.t the beginning of the document 
+        'scuText' # The OIE text would be written here. 
+        'scuOffsets' # The character offset of the OIE w.r.t the beginning of the document would be written here
+   
+    """
 
     if doc_summ=='summ':
         KEY_sent = 'scuSentence'
