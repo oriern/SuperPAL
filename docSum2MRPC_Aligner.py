@@ -49,8 +49,8 @@ class docSum2MRPC_Aligner(annotation2MRPC_Aligner):
 
 
     def save_predictions(self):
-        if self.metric_precompute:
-            super().save_predictions()
+        #if self.metric_precompute:
+         #   super().save_predictions()
 
         self.alignment_database = pd.DataFrame(self.alignment_database_list,
                                                columns=['Quality', '#1 ID', '#2 ID', '#1 String', '#2 String',
