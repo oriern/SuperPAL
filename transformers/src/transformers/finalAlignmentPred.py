@@ -8,6 +8,17 @@ import pickle
 def calc_final_alignments(csv_path, model_path, preds, preds_prob):
 
     df = pd.read_csv(os.path.join(csv_path,'dev.tsv'), sep='\t')
+    positiveAlignments = df#[preds==1]
+    positiveAlignments = positiveAlignments[['database', 'topic','summaryFile', 'scuSentCharIdx', 'scuSentence',
+                                             'documentFile',	'docSentCharIdx', 'docSentText', 'docSpanOffsets',
+                                             'summarySpanOffsets', 'docSpanText', 'summarySpanText','Quality']]
+    positiveAlignments['pred_prob'] = preds_prob#[preds==1]
+    pred_file_name = csv_path[:-1].split('/')[-1] + '_' + model_path[:-1].split('/')[-1] + '_negative' + '.csv'
+    pred_out_path = os.path.join(csv_path, pred_file_name)
+    positiveAlignments.to_csv(pred_out_path, index=False)
+    
+    
+    
     positiveAlignments = df[preds==1]
     positiveAlignments = positiveAlignments[['database', 'topic','summaryFile', 'scuSentCharIdx', 'scuSentence',
                                              'documentFile',	'docSentCharIdx', 'docSentText', 'docSpanOffsets',
@@ -16,7 +27,7 @@ def calc_final_alignments(csv_path, model_path, preds, preds_prob):
     pred_file_name = csv_path[:-1].split('/')[-1] + '_' + model_path[:-1].split('/')[-1] + '.csv'
     pred_out_path = os.path.join(csv_path, pred_file_name)
     positiveAlignments.to_csv(pred_out_path, index=False)
-
+    
 
 
 
