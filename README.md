@@ -6,20 +6,7 @@ Data, Code and Model for the paper "[Summary-Source Proposition-level Alignment:
   ```
   @inproceedings{ernst-etal-2021-summary,
     title = "Summary-Source Proposition-level Alignment: Task, Datasets and Supervised Baseline",
-    author = "Ernst, Ori  and
-      Shapira, Ori  and
-      Pasunuru, Ramakanth  and
-      Lepioshkin, Michael  and
-      Goldberger, Jacob  and
-      Bansal, Mohit  and
-      Dagan, Ido",
-    booktitle = "Proceedings of the 25th Conference on Computational Natural Language Learning",
-    month = nov,
-    year = "2021",
-    publisher = "Association for Computational Linguistics",
-    url = "https://aclanthology.org/2021.conll-1.25",
-    pages = "310--322",
-}
+    author = "Ernst, Ori  and Shapira, Ori  and Pasunuru, Ramakanth  and Lepioshkin, Michael  and Goldberger, Jacob  and Bansal, Mohit  and Dagan, Ido", booktitle = "Proceedings of the 25th Conference on Computational Natural Language Learning", month = nov, year = "2021", publisher = "Association for Computational Linguistics", url = "https://aclanthology.org/2021.conll-1.25", pages = "310--322",}
   ```
 
 You can use our huggingface model or check our demo [here](https://huggingface.co/biu-nlp/superpal).
