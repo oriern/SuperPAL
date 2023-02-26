@@ -12,11 +12,12 @@ Data, Code and Model for the paper "[Summary-Source Proposition-level Alignment:
 You can use our huggingface model or check our demo [here](https://huggingface.co/biu-nlp/superpal).
 
 
-`transformers` directory was forked from [huggingface](https://github.com/huggingface/transformers) v2.5.1, and edited for our purpose.
+`run_glue.py` script was forked from [huggingface](https://github.com/huggingface/transformers) v2.5.1, and edited for our purpose.
 
 `supervised_oie_wrapper` directory is a wrapper over AllenNLP's (v0.9.0) pretrained Open IE model that was implemented by Gabriel Stanovsky. It was forked from [here](https://github.com/gabrielStanovsky/supervised_oie_wrapper), and edited for our purpose.
 
-You can use `py36.yml` to restore all requirements.
+In this repository we used python-3.6. Please refer to `requirements.txt` for other requirements.
+
 
 ## Manual Datasets ##
 
