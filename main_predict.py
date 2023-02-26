@@ -1,6 +1,5 @@
 from utils import *
 from docSum2MRPC_Aligner import docSum2MRPC_Aligner
-sys.path.append('/transformers/examples/')
 
 import run_glue
 
@@ -18,7 +17,7 @@ def redirect_argv(num):
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-data_path', type=str, default='/home/nlp/ernstor1/DUC2004/')  # 'data/final_data/data')
+parser.add_argument('-data_path', type=str, required=True)
 parser.add_argument('-mode', type=str, default='dev')
 parser.add_argument('-log_file', type=str, default='results/dev_log.txt')
 parser.add_argument('-output_path', type=str, required=True)
