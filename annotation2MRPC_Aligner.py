@@ -29,8 +29,9 @@ class annotation2MRPC_Aligner(Aligner):
                                                         'docSentText', 'docSpanOffsets', 'summarySpanOffsets', 'docSpanText', 'summarySpanText'])
 
 
+        
 
-    def main_filter(self, scu, doc_spans):
+    def add_scu_doc_span_pairs(self, scu, doc_spans):
 
         scu_offset_str = offset_list2str(scu['scuOffsets'])
         id_scu = scu['topic'] + '_' + scu_offset_str
@@ -69,6 +70,7 @@ class annotation2MRPC_Aligner(Aligner):
                 self.alignment_database = pd.read_pickle("./span_alignment_database_test.pkl")
         else:
             super().scu_span_aligner()
+            self.add_scu_doc_span_pairs(scu, doc_spans)
 
 
 
