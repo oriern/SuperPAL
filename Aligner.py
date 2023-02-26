@@ -173,14 +173,7 @@ class Aligner(object):
         for scu in scus:
             cand_doc_sents = self.metric_filter(scu)
 
-            if self.docSentsOIE:
-                if len(cand_doc_sents)==len(self.doc_sents):
-                    self.main_filter(scu, doc_spans)
-                else:
-                    doc_spans = []
-                    doc_spans.extend(generate_scu_oie_multiSent(cand_doc_sents, doc_summ='doc'))
-                    self.main_filter(scu, doc_spans)
-            else:
+            if not self.docSentsOIE:    #if using full doc sents, filter doc sents per scu
                 self.main_filter(scu, cand_doc_sents)
 
     def metric_filter(self, scu, use_precompute_metrics=True):
