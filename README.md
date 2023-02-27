@@ -47,9 +47,9 @@ To generate derived datasets (salience, clustering and generation) out of an ali
 
 ## Alignment model ##
 To apply aligment model on your own data, follow the following steps:
-  1. download the trained model [here](https://drive.google.com/drive/folders/1kTaZQVxUm-RWbF71QpOue5xDuV7-IP2i?usp=sharing) and put it under       `/transformers/examples/out/outnewMRPC_OIU/SpansOieNegativeAll_pan_full089_fixed/checkpoint-2000/`
+  1. Download the trained model [here](https://drive.google.com/drive/folders/1kTaZQVxUm-RWbF71QpOue5xDuV7-IP2i?usp=sharing).
 
-  2. run
+  2. Run
   ```
   python main_predict.py -data_path <DATA_PATH>  -output_path <OUT_DIR_PATH>  -alignment_model_path  <ALIGNMENT_MODEL_PATH>
   ```
