@@ -266,7 +266,7 @@ def generate_scu_oie_multiSent(sentences, doc_summ='summ'):
                         assert(sentence[KEY_sent][offset] == tokens[ind][0])
 
                     words.append(tokens[ind])
-                else:
+                else:   #if sub-scu is finished (we get 'O' tag)
                     if scu_start_offset is not None:
                         spaceBeforeToken = 0
                         while sentence[KEY_sent][offset-1-spaceBeforeToken] == ' ':
