@@ -70,5 +70,9 @@ To apply aligment model on your own data, follow the following steps:
           - ...
          
   3. It will create two files in `<OUT_DIR_PATH>`:
+    
     - 'dev.tsv' - contains all alignment candidate pairs.
+
     - a '.csv' file - contains all predicted aligned pairs with their classification score.
+    
+  4. To use the alignment model with your own data with different properties, you can inherent from the docSum2MRPC_Aligner class and overload the relevant functions.
