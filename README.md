@@ -25,11 +25,11 @@ All manual datasets are under `manual_datasets` repository, including crowdsourc
 
 As DUC-based datasets are limited to LDC agreement, we provide here only the character index of all propositions or sentences.
 
-So, if you have the original dataset, you can regenerate the alignments easily.
-
+To restore the text alignments please use:
+```
+  python manual_datasets/restore_alignments.py -indx_csv_path <PATH_TO_THE_CSV_WITH_ALIGNMENTS_INDEXES>  -documents_path <PATH_TO_THE_DOCUMENTS_ARANGED_BY_TOPIC_DIRECTORIES> -summaries_path <SUMMARIES_PATH> -output_file <ALIGNMENTS_OUTPUT_FILE_PATH>
+```
 If you have any issue regarding the DUC alignment regeneration, please contact via email.
-
-In addition, we are trying to upload our alignment datasets to LDC, so it will not have agreement issues. Will be updated soon.
 
 
 MultiNews alignments are released in full.
