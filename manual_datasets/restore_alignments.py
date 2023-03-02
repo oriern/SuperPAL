@@ -6,6 +6,34 @@ from nltk import sent_tokenize
 import numpy as np
 
 
+def clean_duc_documents(doc_text_lines):
+    #removes special tokens from DUC documents
+
+    readLines = False
+    textExtracts = []
+    docId = ''
+    datetime = ''
+    for line in doc_text_lines:
+        lineStripped = line.strip()
+        if not readLines:
+            if lineStripped.startswith('<DOCNO>'):
+                docId = lineStripped[7:-8].strip()  # example: <DOCNO> APW19980818.0980 </DOCNO>
+            elif lineStripped.startswith('<DATE_TIME>'):
+                datetime = lineStripped[11:-12].strip()  # example: <DATE_TIME> 08/18/1998 15:32:00 </DATE_TIME>
+            elif lineStripped.startswith('<TEXT>'):
+                readLines = True
+        else:
+            if lineStripped.startswith('</TEXT>') or lineStripped.startswith('<ANNOTATION>'):
+                break
+            elif lineStripped.startswith('<P>'):
+                continue
+            elif lineStripped.startswith('</P>'):
+                textExtracts.append('\n\n')  # skip line for new paragraph
+                continue
+            else:
+                textExtracts.append(lineStripped)
+    allText = ' '.join(textExtracts)
+    return allText
 
 def add_doc_sent_in_file_idx(alignments, data_path):
     doc_sent_idx = np.zeros(len(alignments), dtype=int)
@@ -138,7 +166,8 @@ if __name__ == "__main__":
         for documentFile in indx_csv_topic['documentFile'].drop_duplicates():
             indx_csv_documentFile = indx_csv_topic[indx_csv_topic['documentFile'] == documentFile]
 
-            doc = ' '.join(read_generic_file(os.path.join(args.documents_path,topic.lower()+'t', documentFile)))
+            doc = read_generic_file(os.path.join(args.documents_path,topic.lower(), documentFile))
+            doc = clean_duc_documents(doc)
 
             indx_csv = add_sentence(doc, indx_csv_documentFile, indx_csv, mode='doc')
             indx_csv = add_span(doc, indx_csv_documentFile, indx_csv, mode='doc')
