@@ -152,7 +152,7 @@ class Aligner(object):
 
 
 
-    def main_filter(self, scu, cand_doc_sents):
+    def add_scu_doc_span_pairs(self, scu, cand_doc_sents):
         return
 
     def scu_span_aligner(self):
@@ -170,11 +170,9 @@ class Aligner(object):
 
         ## create candidate pool for sentences in
         ## the document for each scu
-        for scu in scus:
-            cand_doc_sents = self.metric_filter(scu)
-
-            if not self.docSentsOIE:    #if using full doc sents, filter doc sents per scu
-                self.main_filter(scu, cand_doc_sents)
+        for scu in scus:            
+            if self.docSentsOIE:
+                self.add_scu_doc_span_pairs(scu, doc_spans)
 
     def metric_filter(self, scu, use_precompute_metrics=True):
         """ this module finds the candidate sentences
