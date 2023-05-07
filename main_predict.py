@@ -31,7 +31,7 @@ args = parser.parse_args()
 aligner = docSum2MRPC_Aligner(data_path=args.data_path, mode=args.mode,
                  log_file=args.log_file, output_file = args.output_path,
                  database=args.database)
-logging.info(f'output_file_name: {args.output_file}')
+logging.info(f'output_file_path: {args.output_path}')
 
 summary_files = glob.glob(f"{args.data_path}/summaries/*")
 for sfile in summary_files:
