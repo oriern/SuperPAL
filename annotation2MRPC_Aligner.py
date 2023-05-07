@@ -70,7 +70,7 @@ class annotation2MRPC_Aligner(Aligner):
                 self.alignment_database = pd.read_pickle("./span_alignment_database_test.pkl")
         else:
             super().scu_span_aligner()
-            self.add_scu_doc_span_pairs(scu, doc_spans)
+
 
 
 
