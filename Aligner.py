@@ -79,7 +79,7 @@ class Aligner(object):
             idx_start = idx_start + len(sent) + 1  # 1 for the space character
 
         ## process all the documents files
-        doc_files = glob.glob(f"{self.data_path}/{self.mode}_data/documents/{dataset}/{doc_name}/*")
+        doc_files = glob.glob(f"{self.data_path}/{doc_name}/*")
 
         logging.info(f"Following documents have been found for them:")
         logging.info("\n".join(doc_files))
