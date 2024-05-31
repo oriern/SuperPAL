@@ -40,11 +40,6 @@ MultiNews alignments are released in full.
 
 Predicted alignments of MultiNews and CNN/DailyMail train and val datasets can be found [here](https://drive.google.com/drive/folders/1JnRrdbENzBLpbae5ZIKmil1fuZhm2toc?usp=sharing).
 
-To generate derived datasets (salience, clustering and generation) out of an alignment file use:
-```
-  python createSubDatasets.py -alignments_path <ALIGNMENTS_PATH>  -out_dir_path <OUT_DIR_PATH>
-```
-
 ## Alignment model ##
 To apply aligment model on your own data, follow the following steps:
   1. Download the trained model [here](https://drive.google.com/drive/folders/1kTaZQVxUm-RWbF71QpOue5xDuV7-IP2i?usp=sharing).
